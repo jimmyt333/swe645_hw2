@@ -14,7 +14,7 @@ pipeline {
             sh 'rm -rf *.war'
             sh 'jar -cvf jtran51_survey.war -C src/ .'
             sh 'echo ${BUILD_TIMESTAMP}'
-            sh 'docker login -u jtran33 -p Jasperispuppy3355?'
+            sh 'sudo docker login -u jtran33 -p Jasperispuppy3355?'
             def customImage = docker.build("jtran33/jtran51_hw2_645:${BUILD_TIMESTAMP}")
         }
       }
@@ -23,7 +23,7 @@ pipeline {
     stage('Push to Docker Hub') {
       steps {
         script {
-            sh 'docker push jtran33/jtran51_hw2_645:${BUILD_TIMESTAMP}'
+            sh 'sudo docker push jtran33/jtran51_hw2_645:${BUILD_TIMESTAMP}'
           }
         }
       }
