@@ -15,7 +15,7 @@ pipeline {
             sh 'jar -cvf jtran51_assignment1_part2.war -C src/ .'
             sh 'echo $BUILD_TIMESTAMP'
             sh 'sudo docker login -u jtran33 -p Jasperispuppy3355?'
-            def customImage = docker.build("jtran33/jtran51_hw2_645:$BUILD_TIMESTAMP")
+            def customImage = docker.build("jtran33/jtran51_hw2_645:${BUILD_TIMESTAMP}")
         }
       }
     }
