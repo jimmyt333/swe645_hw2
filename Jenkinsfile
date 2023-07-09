@@ -31,7 +31,7 @@ pipeline {
     stage('Deploy to Rancher') {
       steps {
         script {
-          sh 'kubectl set image deployment/swe645_hw_pipeline swe645_hw_pipeline=jtran33/jtran51_hw2_645:$BUILD_NUMBER -n jenkins-pipeline'
+          sh 'kubectl set image deployment/swe645_hw_pipeline swe645_hw_pipeline=jtran33/jtran51_hw2_645:$BUILD_NUMBER'
         }
       }
     }
