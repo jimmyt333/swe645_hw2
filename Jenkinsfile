@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-	DOCKERHUB_PASS = credentials('Jasperispuppy3355?')
+	DOCKERHUB_CREDENTIALS= credentials('dockerhubcredentials') 
   }
   stages {
     stage('Checkout GitHub Repository') {
@@ -16,8 +16,8 @@ pipeline {
             sh 'rm -rf *.war'
             sh 'jar -cvf jtran51_assignment1_part2.war -C src/ .'
             sh 'echo ${BUILD_TIMESTAMP}'
-            sh 'docker login -u jtran33 -p ${DOCKERHUB_PASS}'
-            def customImage = docker.build("jtran33/jtran51_hw2_645:${BUILD_TIMESTAMP}")
+            sh '$DOCKERHUB_CREDENTIALS_PSW | sudo docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+            def customImage = docker.build("jtran33/jtran51_hw2_645:$BUILD_TIMESTAMP")
         }
       }
     }
@@ -25,7 +25,7 @@ pipeline {
     stage('Push to Docker Hub') {
       steps {
         script {
-            sh 'docker push jtran33/jtran51_hw2_645:${BUILD_TIMESTAMP}'
+            sh 'sudo docker push jtran33/jtran51_hw2_645:$BUILD_TIMESTAMP'
           }
         }
       }
