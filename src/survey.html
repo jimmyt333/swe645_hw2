@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!-- HTML file for Survey Form hosted on EC2 instance.
+Name: Jimmy Tran
+G#: G01130635
+Course-Section: SWE645-001
+Assignment: #1
+-->
+<html>
+<head>
+  <title>GMU Student Survey Form</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+	<div class="header">
+		<h1>GMU Student Survey Form</h1>
+		<h3>Thank you for completing this survey form!</h3>
+	</div>
+  
+	<form action="#" method="">
+	
+		<label for="fName">First Name *</label>
+		<input type="text" id="fName" name="fName" required>
+
+		<label for="lName">Last Name *</label>
+		<input type="text" id="lName" name="lName" required>
+
+		<label for="address">Street Address *</label>
+		<input type="text" id="address" name="address" required>
+
+		<label for="city">City *</label>
+		<input type="text" id="city" name="city" required>
+
+		<label for="state">State *</label>
+		<input type="text" id="state" name="state" required>
+
+		<label for="zip">Zip *</label>
+		<input type="text" id="zip" name="zip" required>
+
+		<label for="telephone">Telephone Number *</label>
+		<input type="text" id="telephone" name="telephone" required>
+
+		<label for="email">Email *</label>
+		<input type="email" id="email" name="email" required>
+
+		<label for="date">Date of Survey *</label>
+		<input type="date" id="date" name="date" required>
+
+
+		<br><label>What did you like most about the campus?</label><br>
+		
+		<label for="students">Students</label>
+		<input type="checkbox" id="students" name="students" value="students"><br>
+		
+		<label for="location">Location</label>
+		<input type="checkbox" id="location" name="location" value="location"><br>
+		
+		<label for="campus">Campus</label>
+		<input type="checkbox" id="campus" name="campus" value="campus"><br>
+		
+		<label for="atmosphere">Atmosphere</label>
+		<input type="checkbox" id="atmosphere" name="atmosphere" value="atmosphere"><br>
+		
+		<label for="dorms">Dorm Rooms</label>
+		<input type="checkbox" id="dorms" name="dorms" value="dorms"><br>
+		
+		<label for="sports">Sports</label>
+		<input type="checkbox" id="sports" name="sports" value="sports"><br>
+
+
+		<br><label>How did you become interested in the university?</label><br>
+		
+		<label for="friends">Friends</label>
+		<input type="radio" id="friends" name="friends" value="friends"><br>
+		
+		<label for="television">Television</label>
+		<input type="radio" id="television" name="television" value="television"><br>
+		
+		<label for="internet">Internet</label>
+		<input type="radio" id="internet" name="internet" value="internet"><br>
+		
+		<label for="other">Other</label>
+		<input type="radio" id="other" name="other" value="other"><br>
+
+
+		<br><label for="likelihood">Likelihood of recommending this school to other prospective students?</label>
+		<select id="likelihood" name="likelihood">
+		  <option value="veryLikely">Very Likely</option>
+		  <option value="likely">Likely</option>
+		  <option value="unlikely">Unlikely</option>
+		</select>
+
+
+		<label for="raffle">Raffle</label>
+		<p>(enter at least ten comma separated numbers ranging from 1 through 100)</p>
+		<input type="text" id="raffle" name="raffle">
+
+
+		<label for="comments">Additional Comments</label>
+		<textarea id="comments" name="comments"></textarea>
+
+
+		<input type="submit" value="Submit">
+		<input type="reset" value="Cancel">
+		
+	</form>
+	
+	<div class="footer">
+		<img src="/jtran51_assignment1_part2/GMU_logo.png" alt="Logo" width="100">
+	</div>
+</body>
+
+</html>

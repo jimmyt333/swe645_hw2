@@ -1,0 +1,57 @@
+/* CSS file for styling the Survey Form page.
+Name: Jimmy Tran
+G#: G01130635
+Course-Section: SWE645-001
+Assignment: #1
+*/
+
+body {
+	font-family: Arial, sans-serif;
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+}
+
+.header, .footer {
+	padding: 10px;
+	text-align: center;
+	background-color: #d0d0e1;
+}
+
+form {
+	max-width: 550px;
+	margin: 0 auto;
+	padding: 20px;
+	border: 1px solid #000;
+}
+
+label {
+	font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+textarea,
+select {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #000;
+	box-sizing: border-box;
+	margin-bottom: 10px;
+}
+
+textarea {
+	height: 100px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+	padding: 10px 15px;
+	background-color: #4CAF50;
+	color: #fff;
+}
+
+input[type="reset"] {
+	background-color: #f44336;
+}
