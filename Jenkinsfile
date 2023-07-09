@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-	DOCKERHUB_CREDENTIALS= credentials('dockerhubcredentials') 
+	DOCKERHUB_PASS= credentials('docker-pass') 
   }
   stages {
     stage('Checkout GitHub Repository') {
@@ -15,7 +15,7 @@ pipeline {
         script {
             sh 'rm -rf *.war'
             sh 'jar -cvf jtran51_assignment1_part2.war -C src/ .'
-            sh 'echo ${BUILD_TIMESTAMP}'
+            sh 'echo $BUILD_TIMESTAMP'
             sh '$DOCKERHUB_CREDENTIALS_PSW | sudo docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
             def customImage = docker.build("jtran33/jtran51_hw2_645:$BUILD_TIMESTAMP")
         }
